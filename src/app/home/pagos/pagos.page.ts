@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-pagos',
@@ -8,9 +8,18 @@ import { MenuController } from '@ionic/angular';
 })
 export class PagosPage implements OnInit {
 
-  constructor(private menuCtrl: MenuController) { }
+  constructor(private menuCtrl: MenuController, private toastController: ToastController) { }
 
   ngOnInit() {
+  }
+  async presentToast(position:'top') {
+    const toast = await this.toastController.create({
+      message: '¡Pago realizado!',
+      duration: 1500,
+      position: position
+    });
+
+    await toast.present();
   }
 
 }

@@ -5,12 +5,13 @@ import { NavigationExtras, Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit{;
+export class HomePage implements OnInit{
 
   constructor(private router: Router, private menuCtrl: MenuController, private geolocation: Geolocation, private servicioBD: DbserviceService) {}
   //@param $event
@@ -28,6 +29,6 @@ export class HomePage implements OnInit{;
   this.geolocation.getCurrentPosition().then((geoposition: Geoposition)=>{
       console.log(geoposition);
   })
-}  
+  }  
 
 }
