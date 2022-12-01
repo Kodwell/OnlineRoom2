@@ -1,4 +1,4 @@
-import { Browser, element, by, browser } from "protractor";
+import { element, by, browser } from "protractor";
 
 describe('Test de login', ()=>{
     //codigo de config
