@@ -3,6 +3,7 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 const { SpecReporter, StacktraceOption } = require('jasmine-spec-reporter');
+const { browser } = require('protractor');
 
 /**
  * @type { import("protractor").Config }
@@ -24,7 +25,8 @@ exports.config = {
     defaultTimeoutInterval: 30000,
     print: function() {}
   },
-  onPrepare() {
+  onPrepare: async() => {
+    await browser.waitForAngularEnabled(false);
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.json')
     });
