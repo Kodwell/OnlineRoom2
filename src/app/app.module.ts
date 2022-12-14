@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DbserviceService } from './services/dbservice.service';
 import { MenuprincipalComponent } from './components/menuprincipal/menuprincipal.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, MenuprincipalComponent],
@@ -14,7 +15,7 @@ import { MenuprincipalComponent } from './components/menuprincipal/menuprincipal
     rippleEffect: false,
     mode: 'md'
   }),
-  AppRoutingModule],
+  AppRoutingModule, HttpClientModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, DbserviceService],
   exports:[MenuprincipalComponent],
   bootstrap: [AppComponent],
