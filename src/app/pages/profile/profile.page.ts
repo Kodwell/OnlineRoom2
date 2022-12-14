@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
+import { Geolocation } from '@awesome-cordova-plugins/geolocation';
 
 @Component({
   selector: 'app-profile',
@@ -23,4 +24,12 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
   }
 
+  latitud:number;
+  longitud:number;
+
+  async obtenercoordenadas(){
+    const obtenercoordenada = await Geolocation.getCurrentPosition();
+    this.latitud=obtenercoordenada.coords.latitude;
+    this.longitud=obtenercoordenada.coords.longitude;
+  }
 }
