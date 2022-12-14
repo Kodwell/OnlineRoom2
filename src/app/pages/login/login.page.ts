@@ -13,6 +13,17 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
-
+  user={
+    usuario:"",
+    password:""
+  }
+  ingresar(){
+    let NavigationExtras: NavigationExtras ={
+      state: {
+        user: this.user
+      }
+    };
+    this.router.navigate(['/profile'],NavigationExtras);
+  }
 
 }

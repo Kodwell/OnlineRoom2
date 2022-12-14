@@ -16,18 +16,18 @@
       <ion-list lines="none" class="form fade-in">
         <ion-item>
           <ion-label>Usuario</ion-label>
-          <ion-input class="ion-text-right" placeholder="ejemplo123"></ion-input>
+          <ion-input class="ion-text-right" placeholder="ejemplo123" [(ngModel)] ="user.usuario"></ion-input>
           <ion-icon slot="end" name="person"></ion-icon>
         </ion-item>
         <ion-item>
           <ion-label>Contraseña</ion-label>
-          <ion-input type="password" class="ion-text-right" placeholder="pass.123"></ion-input>
+          <ion-input type="password" class="ion-text-right" placeholder="pass.123"[(ngModel)] ="user.password"></ion-input>
           <ion-icon slot="end" name="key-outline"></ion-icon>
         </ion-item>
       </ion-list>
 
       <div class="ion-text-center fade-in">
-        <ion-button class="green-button" routerLink="/home">
+        <ion-button class="green-button" routerLink="/home" (click)="ingresar()">
           Ingresa
         </ion-button>
       </div>
